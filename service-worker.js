@@ -1,11 +1,13 @@
 const CACHE_NAME = 'pwa-mana-cache-v1';
 const urlsToCache = [
-  '/', // สำคัญ: ต้องแคชหน้าแรก
-  '/index.html',
-  '/manifest.json',
-  '/service-worker.js',
-  '/images/icon-192x192.png',
-  '/images/icon-512x512.png'
+  // 1. Path Root ของ PWA (สำคัญมากสำหรับ Scope)
+  '/my-simple-pwa/', 
+  // 2. ไฟล์อื่นๆ
+  '/my-simple-pwa/index.html',
+  '/my-simple-pwa/manifest.json',
+  '/my-simple-pwa/service-worker.js',
+  '/my-simple-pwa/images/icon-192x192.png',
+  '/my-simple-pwa/images/icon-512x512.png'
 ];
 
 // ติดตั้ง Service Worker และแคชไฟล์
@@ -48,4 +50,5 @@ self.addEventListener('activate', event => {
       );
     })
   );
+
 });
